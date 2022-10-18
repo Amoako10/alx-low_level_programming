@@ -3,7 +3,7 @@
  * main - Entry point
  *
  * Reture: Always: 0 (success)
- */
+*/
 int main(void)
 {
 	int tho;
