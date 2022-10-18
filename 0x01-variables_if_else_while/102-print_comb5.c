@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * main - Entry point
@@ -13,7 +14,7 @@ int main(void)
 		for (j = 0; j < 100; j++)
 		{
 			if (i < j)
-			{ 
+			{
 				putchar((1 / 10) + 48);
 				putchar((i % 10) + 48);
 				putchar(' ');
