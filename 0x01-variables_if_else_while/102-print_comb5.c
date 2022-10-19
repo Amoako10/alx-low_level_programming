@@ -1,10 +1,10 @@
-#include <stdlib.h>
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - Entry point 
  *
- * Reture: Always: 0 (success)
-*/
+ * Return: Always 0 (success)
+ */
+
 int main(void)
 {
 	int tho;
@@ -12,8 +12,8 @@ int main(void)
 	int ten;
 	int bas;
 
-	for (tho = 0 ; tho < 10 ; tho++)
-	{
+	for ( tho = 0 ; tho < 10 ; tho++)
+	{ 
 		for (hun = 0 ; hun <= 10 ; hun++)
 		{
 			for (ten = 0 ; ten < 10 ; ten++)
@@ -35,6 +35,6 @@ int main(void)
 			}
 		}
 	}
-	putchar('\n');
-	return (0);
+		putchar('\n');
+		return (0);
 }
