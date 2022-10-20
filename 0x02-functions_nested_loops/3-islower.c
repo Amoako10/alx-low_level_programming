@@ -1,14 +1,15 @@
 #include "main.h"
 /**
- * _fslower - checks if a character is lowercase
- * @c: the character
- * Return: 1 if letter is lowercase, 0 if not
+ * _islower - check if the given character is lower case.
+ * @c: character to test.
+ *
+ * Return: 1f letter is lowercase, 0 if not  
  */
-int _inslower(int c)
+int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
-		return (1);
+		 return (1);
 	}
-		return (0);
+	return (0);
 }
