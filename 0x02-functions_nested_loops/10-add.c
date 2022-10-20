@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * add - adds two integers together
- * @a: value to be used for sum.
- * @b: second value to be use for sum.
+ * add - adds two numbers
+ * @a: the first number
+ * @b: the second number
  *
- * Return: int (Sum)
+ * Return: the addition of both
  */
 int add(int a, int b)
 {
