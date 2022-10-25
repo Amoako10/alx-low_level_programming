@@ -4,10 +4,11 @@
  * @s: input to reverse
  * Return: string and in reverse
  */
-void rev_string(char *s)
+void rev_string(char *s, int i)
 {
 	char rev = s[0];
 	int fcounter = 0;
+	int i;
 
 	while (s[fcounter] != '\0')
 		fcounter++;
@@ -20,4 +21,3 @@ void rev_string(char *s)
 		s[fcounter] = rev;
 	}
 }
-
