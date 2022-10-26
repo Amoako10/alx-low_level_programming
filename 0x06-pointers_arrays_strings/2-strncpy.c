@@ -1,22 +1,22 @@
 #include "main.h"
-#include <stdlib.h>
 /**
- * _strchr - locates a character in a string
- * @s: the string to check
- * @c: the character we're looking for
- * Return: a pointer to the first occurance of the character @c in the string
- *  @s. Return NULL if the character isn't found
+ * _strncpy - Write a function that copies a string, with number of bytes
+ * @dest: This is the output dest
+ * @src: This is the input source
+ * @n: This is the number of bytes to copy
+ * Return: Copied string with the number of bytes
  */
-char *_strchr(char *s, char c)
+char *_strncpy(char *dest, char *src, int n)
 {
-	while (*s)
+	int index;
+
+	for (index = 0; index < n && src[index] != '\0' ; index++)
 	{
-		if (*s != c)
-			s++;
-		else
-			return (s);
+		dest[index] = src[index];
 	}
-	if (c == '\0')
-		return (s);
-	return (NULL);
+	for (; index  < n; index++)
+	{
+		dest[index] = '\0';
+	}
+	return (dest);
 }
