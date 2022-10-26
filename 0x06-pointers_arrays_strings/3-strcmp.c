@@ -1,28 +1,16 @@
 #include "main.h"
 /**
- *  _strspn - gets the length of a prefix substring
- *  @s: segment to return bytes from
- *  @accept: the bytes to include
- *  @accept: the bytes to include
- *  of bytes from @accept
+ * _strcmp - Write a function that compares two strings
+ * @s1: This is the input string
+ * @s2: This is the input string
+ * Return: If the strings are equals return "0", if not return other number
  */
-unsigned int _strspn(char *s, char *accept)
+int _strcmp(char *s1, char *s2)
 {
-	int i, j;
-	int c = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (s[i] != 32)
+	for (; (*s1 != '\0' && *s2 != '\0') && (*s1 == *s2); s1++, s2++)
+		if (*s1 == *s2)
 		{
-			for (j = 0; accept[j] != '\0'; j++)
-			{
-				if (s[i] == accept[j])
-					c++;
-			}
+			return (0);
 		}
-		else
-			return (c);
-	}
-	return (c);
+	return (*s1 - *s2);
 }
