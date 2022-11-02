@@ -1,35 +1,26 @@
-#include "main.h"
+#include "mian.h"
 /**
- * _evaluate - evaluate function sqrt
- * @i: intergar
- * @n: intergar
- * Return: evaluate sqrt
+ * sqrt2 - Makes possible to evaluate from 1 to n
+ * @a: same number as n
+ * @b: number that iterates from 1 to n
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately
  */
-int _evaluate(int i; int n)
+int sqrt2(int a, int b)
 {
-	/*Evaluate function*/
-	if (n == 0 || n == 1)
-		return (n);
-
-	else if (i * i < n)
-		return (_evaluate(i + 1, n));
-	else if (i * i == n) /*condiction base*/
-		return (i);
-
-	return (-1);
-	return (-1);
+	if (b * b == a)
+		return (b);
+	else if (b * b > a)
+		return (-1);
+	return (sqrt2(a, b + 1));
 }
 /**
- * _sqrt_recursion - evaluate sqrt
- * @n: inergar
- * Return: sprt_recursion
+ * _sqrt_recursion - returns the natural square root of n
+ * @n: Number Integer
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _sqrt_recursion(int n)
 {
-	int i = 0;
-
-	if (i < 0) /*if  n is negative*/
-		return (-1);
-
-		return (_evaluate(i, n));
+	return (sqrt2(n, 1));
 }
