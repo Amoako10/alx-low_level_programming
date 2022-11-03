@@ -1,43 +1,49 @@
 #include "main.h"
 /**
- * palind2 - obtains length of a
- * @a: string
- * @l: integer to count length
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * is_palindrome -  sss
+ * @r: string
+ * Return: return something
  */
-int palind2(char *a, int l)
+int is_palindrome(char *r)
 {
-	if (*a == 0)
-		return (l - 1);
-	return (palind2(a + 1, l + 1));
+	int i, size, add;
 
+	i = 0;
+	add = 0;
+	size = _strlen_recursion(r);
+	add = (size % 2 != 0) ? 2 : 1;
+	return (evaluate(r, i, size - 1, add));
 }
 /**
- * palind3 - compares string vs string reverse
- * @a: string
- * @l: length
- * Return: On success 1
- * On error, -1 is returned, and errno is set appropriately.
+ * evaluate - compare
+ * @i: i
+ * @size: size
+ * @s: string
+ * @add: addition depending if n is odd or even
+ * Return: return value
  */
-int palind3(char *a, int l)
+int evaluate(char *s, int i, int size, int add)
 {
-	if (*a != *(a + l))
-		return (0);
-	else if (*a == 0)
+	if (i + add == size  && s[i] == s[size])
+	{
 		return (1);
-	return (palind3(a + 1, l - 2));
+	}
+	else if (s[i] == s[size])
+	{
+		return (evaluate(s, i + 1, size - 1, add));
+	}
+	return (0);
 }
 /**
- * is_palindrome - checks if a string is a palindrome
- * @s: string to evaluate
- * Return: On success 1
- * On error, -1 is returned, and errno is set appropriately.
+ *  _strlen_recursion - legth of a string
+ *  @s: string
+ *  Return: return legth
  */
-int is_palindrome(char *s)
+int _strlen_recursion(char *s)
 {
-	int 1;
-
-	l = palind2(s, 0);
-	return (palind3(s, l));
+	/*Base condition*/
+	if (!*s)
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1)); /*Sum 1*/
 }
