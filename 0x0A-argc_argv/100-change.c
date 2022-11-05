@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlio.h>
+#include <stdlib.h>
 /**
  * main - function
  * @argc: length of argv
@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	/*Declaring variables*/
 	int position, total, change, aux;
-	in coins[] = {25, 10, 5, 2, 1}; /*Array int*/
+	int coins[] = {25, 10, 5, 2, 1}; /*Array int*/
 
 	position = total = change = aux = 0;
 	if (argc != 2)
@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
 		/*Declaring while*/
 		while (coins[position] != '\0')
 		{
-			if (total >= coins[positoin])
+			if (total >= coins[position])
 			{
 				aux = (total / coins[position]);
-				charge += aux;
+				change += aux;
 				total -= coins[position] * aux;
 			}
 			position++;
