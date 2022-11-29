@@ -24,36 +24,29 @@ size_t listint_len(const listint_t *h)
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int len = listint_len(*head), count = 0;
-	listint_t *tmp1, *tmp2, *tmp3;
+	unsigned int i = 0;
+	listint_t *actual = *head;
+	listint_t *node;
 
-	if (*head == 0)
+	if (!*head)
 		return (-1);
-	if (len == 1 && index == 0)
-	{
-		free(*head);
-		*head = 0;
-		return (1);
-	}
-	if (index > len - 1)
-		return (-1);
-	tmp1 = *head;
-	while (count < index && index != 0)
-	{
-		tmp2 = tmp1;
-		tmp1 = tmp1->next;
-		tmp3 = tmp1->next;
-		count++;
-	}
 	if (index == 0)
 	{
-		*head = tmp1->next;
-		free(tmp1);
+		*head = (*head)->next;
+		free(actual);
+		return (1);
 	}
-	else
+	while (actual)
 	{
-		tmp2->next = tmp3;
-		free(tmp1);
+		if (i  == index - 1)
+		{
+			node = actual->next;
+			actual->next = node->next;
+			free(node);
+			return (1);
+		}
+		actual = actual->next;
+		i++;
 	}
-	return (1);
+	return (-1);
 }
