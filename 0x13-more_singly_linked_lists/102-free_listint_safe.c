@@ -19,7 +19,9 @@ size_t free_listint_safe(listint_t **h)
 		tmp2 = tmp;
 		tmp = tmp->next;
 		count++;
+
 		free(tmp2);
+
 		if (tmp2 <= tmp)
 			break;
 	}
