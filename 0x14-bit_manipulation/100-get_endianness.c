@@ -5,10 +5,7 @@
  */
 int get_endianness(void)
 {
-	int bit = 0x01;
+	int n = 1;
 
-	if (((bit << 4) & 0x1) == 0x1)
-		return (0);
-	else
-		return (1);
+	return (*((char *) &n) + '0');
 }
