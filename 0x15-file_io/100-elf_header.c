@@ -213,15 +213,15 @@ void _entry(char *h, int x64)
 }
 /**
  * main - displays the information contained in the ELF header at the start of an ELF file
- * Usage: elf_header elf_filename 
+ * Usage: elf_header elf_filename
  *  displayed information: (not less, not more)
  *  Magic
  *  Class
  *  Data
- *  Version 
+ *  Version
  *  OS/ABI
- *  ABI Version 
- *  Type 
+ *  ABI Version
+ *  Type
  *  Entry point address
  *  @argc: Counts the number of parameters that go into main
  *  @argv: Pointer of array of pointers containing strings entering main
