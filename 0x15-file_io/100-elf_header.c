@@ -1,3 +1,8 @@
+/**
+ * File: 100-elf_header.c
+ *   Auth: Brennan D Baraban
+ */
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -246,6 +251,7 @@ int main(int argc, char **argv)
 	_checkelf(h);
 	if (h[4] == 2)
 		x64 = 1;
+
 	_magic(h);
 	_class(h, x64);
 	_data(h);
@@ -255,6 +261,7 @@ int main(int argc, char **argv)
 	_type(h, x64);
 	_entry(h, x64);
 	closecheck = close(fdelf);
+
 	if (closecheck == -1)
 		dprintf(STDERR_FILENO, "Error Closing File\n"), exit(98);
 	return (0)
